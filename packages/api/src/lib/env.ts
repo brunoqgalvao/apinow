@@ -5,6 +5,9 @@ const envSchema = z.object({
   OPENAI_API_KEY: z.string().optional(),
   PORT: z.string().regex(/^\d+$/).transform(Number).default('3001'),
 
+  // Admin backoffice secret
+  ADMIN_SECRET: z.string().optional(),
+
   // Stripe (for credit top-ups via card)
   STRIPE_SECRET_KEY: z.string().optional(),
   STRIPE_WEBHOOK_SECRET: z.string().optional(),

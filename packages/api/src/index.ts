@@ -13,6 +13,7 @@ import keys from './routes/keys.js';
 import usage from './routes/usage.js';
 import signup from './routes/signup.js';
 import account from './routes/account.js';
+import admin from './routes/admin.js';
 
 const app = new Hono();
 
@@ -50,6 +51,7 @@ app.route('/', proxy);
 app.route('/', keys);
 app.route('/', usage);
 app.route('/', account);
+app.route('/', admin);
 
 // Error handler
 app.onError((err, c) => {
