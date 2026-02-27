@@ -1,0 +1,37 @@
+slug: weather
+name: Weather API
+description: Get current weather and forecasts for any location worldwide
+category: data
+base_url: https://api.openweathermap.org/data/2.5
+auth_type: api_key
+auth_config:
+  type: query_param
+  param_name: appid
+tags: [weather, forecast, temperature, climate]
+endpoints:
+  - method: GET
+    path: /weather
+    summary: Get current weather
+    description: Returns current weather data for a given city or coordinates
+    parameters:
+      - name: q
+        in: query
+        description: City name (e.g., "London" or "London,UK")
+        required: false
+        type: string
+      - name: lat
+        in: query
+        description: Latitude
+        required: false
+        type: number
+      - name: lon
+        in: query
+        description: Longitude
+        required: false
+        type: number
+      - name: units
+        in: query
+        description: Units of measurement (standard, metric, imperial)
+        required: false
+        type: string
+        default: metric
